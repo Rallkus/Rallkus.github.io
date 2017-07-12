@@ -1,5 +1,5 @@
 
-[Link](https://https://rallkus.github.io/Game)
+[Link](https://rallkus.github.io/Game)
 
 ## Welcome to GitHub Pages
 
