@@ -9,11 +9,13 @@ var posY = 50;
 button.onclick = function(){
   puntos+=1;
   text.innerText = puntos;
-  posY=(Math.random()*1000%550)+50;
-  posX=(Math.random()*1000%1150)+50;
+  posY=(Math.random()*screen.availHeight*1000)%screen.availHeight;
+  posX=(Math.random()*screen.availWidth*1000)%screen.availWidth;
 
   cuadrado.style.left = posX+'px';
 	cuadrado.style.top  = posY+'px';
+  alert(screen.availWidth);
+  alert(screen.availHeight);
   }
 
 document.onkeydown = checkKey;
@@ -38,6 +40,7 @@ function checkKey(e) {
 		posX+=10;
     puntos+=1;
     text.innerText = puntos;
+    alert(posX + ' ' + posY);
 	}
 	console.log(e)
 

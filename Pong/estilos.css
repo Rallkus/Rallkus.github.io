@@ -1,0 +1,16 @@
+.left_rectangle {
+    background: red;
+    width: 25px;
+    height: 200px;
+    position: absolute;
+    left: 10px;
+    top: 100px;
+}
+.right_rectangle {
+    background: red;
+    width: 25px;
+    height: 200px;
+    position: absolute;
+    left: 800px;
+    top: 100px;
+}
