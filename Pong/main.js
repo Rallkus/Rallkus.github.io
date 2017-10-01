@@ -42,10 +42,12 @@ function keyUp(e){
 	}
 }
 
-setInterval(function() {
+function update(){
 	posY_leftRectangle += leftV*10/1000;
 	posY_rightRectangle += rightV*10/1000;
 
 	left_rectangle.style.top  = Math.round(posY_leftRectangle) +'px';
 	right_rectangle.style.top  = Math.round(posY_rightRectangle) +'px';
-}, 10);
+}
+
+setInterval(update, 10);
