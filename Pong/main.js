@@ -4,28 +4,46 @@ var left_rectangle = document.getElementById("left_rectangle");
 var posY_leftRectangle = 100;
 var posY_rightRectangle = 100;
 
+var leftV = 0;
+var rightV = 0;
 
-document.onkeydown = checkKey;
 
-function checkKey(e) {
+document.onkeydown = keyDown;
+document.onkeyup = keyUp;
 
-    e = e || window.event;
+function keyDown(e) {
+	e = e || window.event;
 
-    if(e.key=="w" || e.key=="W"){
-		posY_leftRectangle-=10;
+	if(e.key=="w" || e.key=="W"){
+		leftV=-10;
 	}
 	if(e.key=="s" || e.key=="S"){
-		posY_leftRectangle+=10;
-	}if(e.key=="ArrowUp"){
-  posY_rightRectangle-=10;
-}
-if(e.key=="ArrowDown"){
-  posY_rightRectangle+=10;
-}
-
+		leftV=10;
+	}
+	if(e.key=="ArrowUp"){
+		rightV=-10;
+	}
+	if(e.key=="ArrowDown"){
+		rightV=10;
+	}
 	console.log(e)
-
-
-	left_rectangle.style.top  = posY_leftRectangle +'px';
-  right_rectangle.style.top  = posY_rightRectangle +'px';
 }
+
+function keyUp(e){
+	e = e || window.event;
+	
+	if(e.key=="w" || e.key=="W" || e.key=="s" || e.key=="S"){
+		leftV=0;
+	}
+	if(e.key=="ArrowUp" || e.key=="ArrowDown"){
+  		rightV=0;
+	}
+}
+
+setInterval(function() {
+	posY_leftRectangle += leftV*10/1000;
+	posY_rightRectangle += rightV*10/1000;
+
+	left_rectangle.style.top  = Math.round(posY_leftRectangle) +'px';
+	right_rectangle.style.top  = Math.round(posY_rightRectangle) +'px';
+}, 10);
