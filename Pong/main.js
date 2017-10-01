@@ -7,6 +7,8 @@ var posY_rightRectangle = 100;
 var leftV = 0;
 var rightV = 0;
 
+var speed = 100;
+
 
 document.onkeydown = keyDown;
 document.onkeyup = keyUp;
@@ -15,16 +17,16 @@ function keyDown(e) {
 	e = e || window.event;
 
 	if(e.key=="w" || e.key=="W"){
-		leftV=-10;
+		leftV=-speed;
 	}
 	if(e.key=="s" || e.key=="S"){
-		leftV=10;
+		leftV=speed;
 	}
 	if(e.key=="ArrowUp"){
-		rightV=-10;
+		rightV=-speed;
 	}
 	if(e.key=="ArrowDown"){
-		rightV=10;
+		rightV=speed;
 	}
 	console.log(e)
 }
